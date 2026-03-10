@@ -151,7 +151,7 @@ nav li:last-of-type a, nav li:nth-of-type(4) a {
 }
 
 .about .subscription-form input, .subscribe .subscription-form input {
-    padding: clamp(10px, 1.5vw, 20px) clamp(24px, 15vw, 220px) clamp(16px, 2vw, 24px) clamp(10px, 1.5vw, 20px);
+    padding: clamp(10px, 1.5vw, 20px) clamp(24px, 15vw, 160px) clamp(16px, 2vw, 24px) clamp(10px, 1.5vw, 20px);
     border-radius: 8px;
     border: none;
     font-size: clamp(16px, 2vw, 20px);
@@ -397,6 +397,10 @@ nav li:last-of-type a, nav li:nth-of-type(4) a {
 
 .subscribe .subscription-form {
     justify-content: center;
+}
+
+.subscribe .subscription-form input {
+    padding: clamp(10px, 1.5vw, 20px) clamp(24px, 15vw, 210px) clamp(16px, 2vw, 24px) clamp(10px, 1.5vw, 20px);
 }
 
 footer .container {
