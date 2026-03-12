@@ -14,7 +14,6 @@ body {
     font-style: normal;
     line-height: normal;
     background-color: var(--background-color-section);
-    box-sizing: border-box;
 }
 
 .container {
@@ -31,6 +30,10 @@ header {
     padding: clamp(16px, 1vw, 22px) 0;
     box-shadow: 4px 6px 13px 0 rgba(215, 215, 215, 0.25);
     margin-bottom: clamp(30px, 10vw, 164px);
+    position: sticky;
+    top: 0;
+    background: var(--white-color-primary);
+    z-index: 100;
 }
 
 .nav-item-link {
@@ -195,23 +198,22 @@ nav li:last-of-type a, nav li:nth-of-type(4) a {
 }
 
 .category .cards, .articles .cards {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 0.65fr));
+    grid-auto-rows: minmax(280px, auto);
     width: 100%;
     justify-content: center;
-    flex-wrap: wrap;
     gap: clamp(20px, 3vw, 37px);
     margin-bottom: clamp(25px, 6vw, 68px);
 }
 
 .category .category-card, .articles .category-card {
-    flex: 0.2 1 220px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     background-color: var(--white-color-primary);
     border-radius: 8px;
     padding: 40px 30px;
-    min-height: 280px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: 1px solid rgba(0, 0, 0, 0.05);
     box-shadow: 4px 6px 13px 0 rgba(215, 215, 215, 0.25);
@@ -258,12 +260,13 @@ nav li:last-of-type a, nav li:nth-of-type(4) a {
 }
 
 .articles .cards {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 0.65fr));
+    grid-auto-rows: minmax(425px, auto);
     margin-bottom: clamp(25px, 6vw, 80px);
     gap: clamp(10px, 1vw, 16px);
 }
 
 .articles .category-card {
-    flex: 0 1 300px;
     border-radius: 12px;
     justify-content: space-between;
     align-items: center;
@@ -285,7 +288,7 @@ nav li:last-of-type a, nav li:nth-of-type(4) a {
 }
 
 .articles .category-card:hover {
-    transform: scale(1.1);
+    transform: scale(1.03);
     border-radius: 12px;
     cursor: pointer;
     background-color: var(--white-color-secondary);
@@ -414,10 +417,10 @@ footer .footer-wrapper {
     gap: clamp(30px, 25vw, 160px);
     row-gap: clamp(20px, 3vw, 30px);
     flex-wrap: wrap;
-    padding: clamp(20px, 7vw,70px) 0 clamp(20px, 6vw,50px) 0;
+    padding: clamp(20px, 7vw, 70px) 0 clamp(20px, 6vw, 50px) 0;
 }
 
-footer .logo a>svg, footer .logo>p {
+footer .logo a > svg, footer .logo > p {
     margin-bottom: clamp(10px, 2vw, 20px);
 }
 
@@ -519,12 +522,12 @@ footer .copyright {
 
 @media (max-width: 767px) {
     nav.collapsing {
-        transition: none !important;
-        display: none !important;
+        transition: none;
+        display: none;
     }
 
     #navContent.collapse.show {
-        display: flex !important;
+        display: flex;
         position: fixed;
         top: 0;
         left: 0;
