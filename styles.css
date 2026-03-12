@@ -7,13 +7,14 @@
     --dark-grey-color: #9A9494;
     --background-color-section: #EFF0F3;
     --background-color-btn: #6246EA;
+    --background-color-footer: #E4E5E9;
 }
 
 body {
     font-family: "Plus Jakarta Sans", sans-serif;
     font-style: normal;
     line-height: normal;
-    background-color: var(--background-color-section);
+    background: var( --background-color-section);
 }
 
 .container {
@@ -32,8 +33,11 @@ header {
     margin-bottom: clamp(30px, 10vw, 164px);
     position: sticky;
     top: 0;
-    background: var(--white-color-primary);
     z-index: 100;
+}
+
+header, .about , .category, .subscribe {
+    background: var( --background-color-section);
 }
 
 .nav-item-link {
@@ -408,6 +412,10 @@ nav li:last-of-type a, nav li:nth-of-type(4) a {
 
 footer .container {
     align-items: start;
+}
+
+footer {
+    background-color: var(--background-color-footer);
 }
 
 footer .footer-wrapper {
